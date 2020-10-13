@@ -27,6 +27,10 @@ System::Void AstrologyForm::MyForm::result_Click(System::Object^ sender, System:
 	int degrees3 = Convert::ToInt32(text5->Text);
 	int min3 = Convert::ToInt32(text6->Text);
 
+	int degrees_one = Convert::ToInt32(textBox1->Text);
+	int degrees_two = Convert::ToInt32(textBox2->Text);
+	int degrees_three = Convert::ToInt32(textBox3->Text);
+
 	int resultmin, resultmin2, resultdegrees = 0, resultdegrees2;
 
 
@@ -38,7 +42,7 @@ System::Void AstrologyForm::MyForm::result_Click(System::Object^ sender, System:
 		degrees += 1;
 	}
 
-	resultdegrees = degrees + degrees2;
+	resultdegrees = degrees + degrees2 + degrees_one + degrees_two;
 
 	resultmin2 = resultmin - min3;		    // Считаем вторую часть уравнения вычитание
 
@@ -59,7 +63,7 @@ System::Void AstrologyForm::MyForm::result_Click(System::Object^ sender, System:
 		resultdegrees += 360;
 	}
 
-	resultdegrees2 = resultdegrees - degrees3;
+	resultdegrees2 = resultdegrees - degrees3 - degrees_three;
 
 	if (resultdegrees2 > 359)
 	{
@@ -87,6 +91,9 @@ System::Void AstrologyForm::MyForm::buttonClear_Click(System::Object^ sender, Sy
 	text6->Clear();
 	text7->Clear();
 	text8->Clear();
+	textBox1->Clear();
+	textBox2->Clear();
+	textBox3->Clear();
 
 	return System::Void();
 }
@@ -127,6 +134,23 @@ System::Void AstrologyForm::MyForm::text7_TextChanged(System::Object^ sender, Sy
 }
 
 System::Void AstrologyForm::MyForm::text8_TextChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	return System::Void();
+}
+
+ /* Доп. параметры*/
+
+System::Void AstrologyForm::MyForm::textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	return System::Void();
+}
+
+System::Void AstrologyForm::MyForm::textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	return System::Void();
+}
+
+System::Void AstrologyForm::MyForm::textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	return System::Void();
 }
